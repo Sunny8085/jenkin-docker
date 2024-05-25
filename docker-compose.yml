@@ -1,0 +1,29 @@
+version: 3.2.5
+
+services:
+  spring_crud:
+    container_name: spring_crud_jenkins
+    image: crud_jenkins:1
+    build: 
+     context: .
+     dockerfile: Dockerfile
+#    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresdb:5432/dockerdb
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgresdocker
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - '9090:8080'
+    depends_on:
+      - postgresdb
+ 
+  postgresdb:
+    container_name: postgresdb
+    image: postgres:12
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgresdocker
+     - POSTGRES_DB=dockerdb
+    ports:
+      - '5432:5432'

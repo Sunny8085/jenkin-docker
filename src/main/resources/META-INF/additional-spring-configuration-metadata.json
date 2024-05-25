@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "spring.server.error.include-message",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.server.error.include-message'"
+}]}

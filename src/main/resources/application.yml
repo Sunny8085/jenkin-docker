@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dockerdb
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+       ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO}
+       dialect: org.hibernate.dialect.PostgreSQLDialect
