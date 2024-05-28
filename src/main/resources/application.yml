@@ -1,8 +1,8 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/dockerdb
-    username: postgres
-    password: postgres
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/dockerdb
+#    username: postgres
+#    password: postgres
   jpa:
     properties:
       hibernate:
